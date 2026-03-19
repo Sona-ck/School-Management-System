@@ -1,0 +1,40 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<section class="layout_padding">
+<div class="container">
+
+<h2 class="text-center">Exam Schedule</h2>
+<hr>
+
+<table class="table table-bordered table-striped text-center">
+<thead class="table-dark">
+<tr>
+    <th>Subject</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+{% for exam in exams %}
+<tr>
+    <td>{{ exam.subject }}</td>
+    <td>{{ exam.date }}</td>
+    <td>{{ exam.time }}</td>
+    <td>{{ exam.description }}</td>
+</tr>
+{% empty %}
+<tr>
+    <td colspan="4">No exams available</td>
+</tr>
+{% endfor %}
+</tbody>
+
+</table>
+
+</div>
+</section>
+
+{% endblock %}

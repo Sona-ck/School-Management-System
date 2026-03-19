@@ -1,0 +1,57 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+  <section class="book_section layout_padding">
+    <div class="container" style="width:350px;">
+      <div class="row">
+{#        <div class="col">#}
+          <form method="post">
+              {% csrf_token %}
+            <h4><span>Transport</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">From </label>
+                <input type="text" class="form-control" id="user" placeholder="From" name="from" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">To </label>
+                <input type="text" class="form-control" id="user" placeholder="To" name="to" style="width:350px;" required="">
+              </div>
+            </div>
+               <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Amount </label>
+                <input type="text" class="form-control" id="user" placeholder="Amount" name="amount" style="width:350px;" required="">
+              </div>
+            </div>
+            <div class="btn-box">
+              <input type="submit" class="btn"  value="Signup">
+            </div>
+          </form>
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{#    <script type="text/javascript">#}
+{#        function validatepwd() {#}
+{#            pwd=document.getElementById('pass').value;#}
+{#            cpwd=document.getElementById('copass').value;#}
+{#            if(pwd!=cpwd)#}
+{#            {#}
+{#                document.getElementById('copass').value;#}
+{#                alert('password Miss match!!!')#}
+{#            }#}
+{#        }#}
+{#    </script>#}
+{#    {% if kk == 'fa' %}#}
+{#        <script>#}
+{#        alert("User Already exist..")#}
+{#        </script>#}
+{#        {% elif kk == 'ss' %}#}
+{#        <script>#}
+{#        alert("Successfully Registered....")#}
+{#        </script>#}
+{#    {% endif %}#}
+{% endblock %}

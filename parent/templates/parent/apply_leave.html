@@ -1,0 +1,100 @@
+{% extends 'temp/parent.html' %}
+{% block base %}
+
+<style>
+    body {
+        background-color: #f4f6f9;
+        font-family: Arial, sans-serif;
+    }
+
+    .leave-container {
+        width: 500px;
+        margin: 60px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    textarea {
+        resize: none;
+        height: 100px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+    .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="leave-container">
+    <h2>Apply Leave</h2>
+
+```
+<form method="post">
+    {% csrf_token %}
+
+    <label>Start Date</label>
+    <input type="date" name="date" required>
+
+    <label>Number of Days</label>
+    <input type="number" name="no_of_leave" min="1" required>
+
+    <label>Reason</label>
+    <textarea name="reason" placeholder="Enter reason for leave..." required></textarea>
+
+    <button type="submit" class="btn-submit">Submit Leave</button>
+</form>
+
+<a href="javascript:history.back()" class="back-link">← Back</a>
+```
+
+</div>
+
+{% endblock %}

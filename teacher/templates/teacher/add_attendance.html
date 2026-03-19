@@ -1,0 +1,38 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<div class="container mt-4">
+<h2>Add Attendance</h2>
+
+<form method="post">
+{% csrf_token %}
+
+<label>Select Student:</label>
+<select name="student" class="form-control">
+{% for s in students %}
+<option value="{{ s.student_id }}">{{ s.name }}</option>
+{% endfor %}
+</select>
+
+<br>
+
+<label>Date:</label>
+<input type="date" name="date" class="form-control">
+
+<br>
+
+<label>Status:</label>
+<select name="status" class="form-control">
+<option value="Present">Present</option>
+<option value="Absent">Absent</option>
+</select>
+
+<br>
+
+<button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+
+</div>
+
+{% endblock %}

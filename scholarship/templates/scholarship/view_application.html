@@ -1,0 +1,36 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-striped">
+    <tr style="color: black">
+        <th>Scholarship</th>
+        <th>Details</th>
+        <th>Publish Date</th>
+        <th>End Date</th>
+{#        <th>Time</th>#}
+    </tr>
+
+        {% for i in a %}
+             <tr style="color: black">
+        <td>{{ i.scholarship }}</td>
+        <td>{{ i.details }}</td>
+        <td>{{ i.publish_date }}</td>
+        <td>{{ i.end_date }}</td>
+            <td><a href="/scholarship/edit/{{ i.scholar_id }}">Edit</a> </td>
+            <td><a href="/scholarship/delete/{{ i.scholar_id }}">Delete</a> </td>
+{#        <td>{{ i.time }}</td>#}
+             </tr>
+        {% endfor %}
+
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}

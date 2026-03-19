@@ -1,0 +1,33 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-striped">
+    <tr style="color: black">
+        <th>Parent Name</th>
+        <th>Student Name</th>
+        <th>No of Days</th>
+        <th>Reason</th>
+        <th>Status</th>
+    </tr>
+    <tr style="color: black">
+        {% for i in x %}
+        <td>{{ i.parent_id }}</td>
+        <td>{{ i.student_id }}</td>
+        <td>{{ i.no_of_leave }}</td>
+            <td>{{ i.reson }}</td>
+            <td>{{ i.status }}</td>
+        {% endfor %}
+    </tr>
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}

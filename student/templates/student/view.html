@@ -1,0 +1,65 @@
+{% extends 'temp/admin.html' %}
+{% block base %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<br>
+<h1>student</h1>
+<table border="2" class="table table-striped">
+    <tr style="color: black">
+        <th>Name</th>
+    <th>Address</th>
+    <th>class</th>
+    <th>division</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Father's name</th>
+    <th>Mother's name</th>
+    <th>Father's Occupation</th>
+    <th>Mother's Occupation</th>
+    <th>Date of Birth</th>
+    <th>Aadhar Number</th>
+    <th>Family Income</th>
+    <th>Contact</th>
+    <th>Nativity</th>
+    <th>NCL Class</th>
+    <th>Caste</th>
+
+{#    <th>phone</th>#}
+    </tr>
+    <tr style="color: black">
+        {% for i in a %}
+        <td>{{ i.stdname }}</td>
+        <td>{{ i.address }}</td>
+        <td>{{ i.class_field }}</td>
+        <td>{{ i.division }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.fname }}</td>
+        <td>{{ i.mname }}</td>
+        <td>{{ i.father_occupation }}</td>
+        <td>{{ i.mother_occupation }}</td>
+        <td>{{ i.dob }}</td>
+        <td>{{ i.aadhar }}</td>
+        <td>{{ i.income }}</td>
+        <td>{{ i.contact }}</td>
+        <td>{{ i.nativity }}</td>
+        <td>{{ i.ncl_class }}</td>
+        <td>{{ i.caste }}</td>
+
+
+{#            <td><a href="/student/delstd/{{ i.student_id }}">Delete</a></td>#}
+{#        <td>{{ i. }}</td>#}
+        {% endfor %}
+    </tr>
+
+
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

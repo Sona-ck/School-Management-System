@@ -1,0 +1,24 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<section class="layout_padding">
+<div class="container">
+
+<h2 class="text-center">Transport Details</h2>
+<hr>
+
+{% if transport %}
+    <p><strong>Bus/Vehicle:</strong> {{ transport.vehicle_name }}</p>
+    <p><strong>Route:</strong> {{ transport.route }}</p>
+    <p><strong>Pick-up Point:</strong> {{ transport.pickup_point }}</p>
+    <p><strong>Drop-off Point:</strong> {{ transport.drop_point }}</p>
+{% else %}
+    <p>No transport information available for your child.</p>
+{% endif %}
+
+<a href="/parent/" class="btn btn-primary mt-3">Back to Dashboard</a>
+
+</div>
+</section>
+
+{% endblock %}

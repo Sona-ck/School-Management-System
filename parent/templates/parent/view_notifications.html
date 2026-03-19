@@ -1,0 +1,25 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<section class="layout_padding">
+<div class="container">
+
+<h2 class="text-center">Notifications</h2>
+<hr>
+
+{% for n in notifications %}
+<div class="card shadow mb-3">
+    <div class="card-body">
+        <h5>{{ n.title }}</h5>
+        <p>{{ n.message }}</p>
+        <small>{{ n.date }}</small>
+    </div>
+</div>
+{% empty %}
+<p class="text-center">No notifications available</p>
+{% endfor %}
+
+</div>
+</section>
+
+{% endblock %}

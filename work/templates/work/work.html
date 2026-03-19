@@ -1,0 +1,44 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+  <section class="book_section layout_padding">
+    <div class="container" style="width:350px;">
+      <div class="row">
+{#        <div class="col">#}
+          <form method="post">
+              {% csrf_token %}
+            <h4><span>Work</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Work </label>
+                <input type="text" class="form-control" id="work" placeholder="Work" name="work" style="width:350px;" required="">
+              </div>
+            </div>
+               <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="publish_date">Publish Date</label>
+                <input type="date" class="form-control" id="publish_date" placeholder="Publish Date" name="publish_date" style="width:350px;" required="">
+              </div>
+            </div>
+               <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="end_date">End Date </label>
+                <input type="date" class="form-control" id="end_date" placeholder="End Date" name="end_date" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Subject </label>
+                <input type="text" class="form-control" id="user" placeholder="Subject" name="subj" style="width:350px;" required="">
+              </div>
+            </div>
+            <div class="btn-box">
+              <input type="submit" class="btn"  >
+            </div>
+          </form>
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{#    {% endif %}#}
+{% endblock %}

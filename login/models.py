@@ -1,0 +1,12 @@
+from django.db import models
+
+class Login(models.Model):
+    login_id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    type = models.CharField(max_length=30)
+    u_id = models.IntegerField()
+
+    class Meta:
+        managed = True
+

@@ -1,0 +1,58 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+
+<section class="book_section layout_padding">
+  <div class="container" style="width:350px;">
+    <div class="row">
+
+      <form method="post">
+        {% csrf_token %}
+
+        <h4><span>Exam</span></h4>
+
+        <div class="form-row">
+          <div class="form-group col-lg-4">
+            <label>Exam Name</label>
+            <input type="text" class="form-control" placeholder="Exam name" name="exname" style="width:350px;" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-lg-4">
+            <label>Subject</label>
+            <input type="text" class="form-control" placeholder="Subject" name="sub" style="width:350px;" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-lg-4">
+            <label>Date</label>
+            <input type="date" class="form-control" name="date" style="width:350px;" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-lg-4">
+            <label>Time</label>
+            <input type="time" class="form-control" name="time" style="width:350px;" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-lg-4">
+            <label>Schedule</label>
+            <input type="text" class="form-control" placeholder="Schedule" name="sch" style="width:350px;" required>
+          </div>
+        </div>
+
+        <div class="btn-box">
+          <input type="submit" class="btn" value="Add">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

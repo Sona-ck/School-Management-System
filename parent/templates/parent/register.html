@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parent Registration</title>
+</head>
+<body>
+
+<h2>Parent Registration</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Name</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Phone</label>
+    <input type="text" name="phone"><br><br>
+
+    <label>Email</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Address</label>
+    <input type="text" name="address"><br><br>
+
+    <label>Password</label>
+    <input type="password" name="password"><br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+</body>
+</html>

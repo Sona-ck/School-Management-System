@@ -1,0 +1,28 @@
+{% extends 'temp/admin.html' %}
+{% block base %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-striped">
+    <tr style="color: black">
+        <th>Scholarship</th>
+        <th>Details</th>
+{#        <th>Time</th>#}
+    </tr>
+    <tr style="color: black">
+        {% for i in a %}
+        <td>{{ i.scholarship }}</td>
+        <td>{{ i.details }}</td>
+{#        <td>{{ i.time }}</td>#}
+        {% endfor %}
+    </tr>
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+<section class="book_section layout_padding">
+  <div class="container" style="width:400px;">
+    <div class="row">
+
+      <form method="post">
+        {% csrf_token %}
+
+        <h4>
+          <span>Post Notification</span>
+        </h4>
+
+        <!-- Notification Title -->
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <label>Notification Title</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Enter notification title"
+                   name="notification"
+                   required>
+          </div>
+        </div>
+
+        <!-- Notification Message -->
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <label>Message</label>
+            <textarea class="form-control"
+                      name="message"
+                      rows="4"
+                      placeholder="Enter notification message"
+                      required></textarea>
+          </div>
+        </div>
+
+        <!-- Priority -->
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <label>Priority</label>
+            <select class="form-control" name="priority">
+              <option value="Normal">Normal</option>
+              <option value="Important">Important</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Submit Button -->
+        <div class="btn-box">
+          <input type="submit" class="btn btn-primary" value="Post Notification">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

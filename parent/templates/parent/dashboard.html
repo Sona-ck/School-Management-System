@@ -1,0 +1,97 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<section class="layout_padding">
+<div class="container">
+
+<h2 class="text-center">Parent Dashboard</h2>
+<hr>
+
+<div class="row">
+
+<!-- STUDENT -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Student Details</h5>
+<p>View your child's profile</p>
+<a href="/parent/student/" class="btn btn-success">View</a>
+</div>
+</div>
+
+<!-- ATTENDANCE -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Attendance</h5>
+<p>Check your child's attendance</p>
+<a href="/parent/attendance/" class="btn btn-success">View</a>
+</div>
+</div>
+
+
+<!-- RESULTS -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Results</h5>
+<p>View exam results</p>
+<a href="/parent/result/" class="btn btn-success">View</a>
+</div>
+</div>
+
+<!-- ✅ NEW LEAVE CARD -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Leave Request</h5>
+<p>Apply leave & check status</p>
+<a href="/parent/apply_leave/" class="btn btn-success">Apply</a>
+</div>
+</div>
+    <!-- EXAMS -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Exams</h5>
+<p>View upcoming exams</p>
+<a href="/parent/view_exams/" class="btn btn-success">View</a>
+</div>
+</div>
+    <div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Notifications</h5>
+<p>View latest updates</p>
+<a href="/parent/view_notifications/" class="btn btn-success">View</a>
+</div>
+</div>
+    <div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Work / Homework</h5>
+<p>View assigned tasks</p>
+<a href="/parent/view_work/" class="btn btn-success">View</a>
+</div>
+</div>
+    <div class="col-md-4">
+    <div class="card p-3 shadow text-center">
+        <h5>Scholarships</h5>
+        <p>View available scholarships</p>
+        <a href="/parent/view-scholarships/" class="btn btn-success">View</a>
+    </div>
+</div>
+    <!-- TRANSPORT -->
+<div class="col-md-4">
+<div class="card p-3 shadow text-center">
+<h5>Transport</h5>
+<p>View your child's transport details</p>
+<a href="/parent/view_transport/" class="btn btn-success">View</a>
+</div>
+</div>
+
+</div>
+
+<br>
+
+<div class="text-center">
+<a href="/parent/logout/" class="btn btn-danger">Logout</a>
+</div>
+
+</div>
+</section>
+
+{% endblock %}

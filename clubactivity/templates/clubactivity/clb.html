@@ -1,0 +1,51 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+  <section class="book_section layout_padding">
+    <div class="container" style="width:350px;">
+      <div class="row">
+{#        <div class="col">#}
+          <form method="post">
+              {% csrf_token %}
+            <h4><span>Club Activity</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Club </label>
+                <input type="text" class="form-control" id="user" placeholder="Club" name="Club" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Activity </label>
+                <input type="text" class="form-control" id="user" placeholder="Activity" name="Activity" style="width:350px;" required="">
+              </div>
+            </div>
+            <div class="btn-box">
+              <input type="submit" class="btn"  value="Submit">
+            </div>
+          </form>
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{#    <script type="text/javascript">#}
+{#        function validatepwd() {#}
+{#            pwd=document.getElementById('pass').value;#}
+{#            cpwd=document.getElementById('copass').value;#}
+{#            if(pwd!=cpwd)#}
+{#            {#}
+{#                document.getElementById('copass').value;#}
+{#                alert('password Miss match!!!')#}
+{#            }#}
+{#        }#}
+{#    </script>#}
+{#    {% if kk == 'fa' %}#}
+{#        <script>#}
+{#        alert("User Already exist..")#}
+{#        </script>#}
+{#        {% elif kk == 'ss' %}#}
+{#        <script>#}
+{#        alert("Successfully Registered....")#}
+{#        </script>#}
+{#    {% endif %}#}
+{% endblock %}

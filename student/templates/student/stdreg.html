@@ -1,0 +1,154 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+  <section class="book_section layout_padding">
+    <div class="container" style="width:350px;">
+      <div class="row">
+{#        <div class="col">#}
+          <form method="post">
+              {% csrf_token %}
+            <h4><span>Student register</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="name">Name </label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" style="width:350px;" required>
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="email">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Address" name="address" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="Class">class</label>
+                <input type="text" class="form-control" id="cls"  placeholder="Class" name="class" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="division">Division </label>
+                <input type="text" class="form-control" id="division" placeholder="Division" name="div" style="width:350px;" required="">
+              </div>
+              <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="copass">Gender</label>
+                  <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="fname">Father's Name </label>
+                <input type="text" class="form-control" id="fname" placeholder="Father's name" name="fname" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="mname">Mother's Name </label>
+                <input type="text" class="form-control" id="mname" placeholder="Mother's name" name="mname" style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="father_occupation">Father's Ocpn</label>
+                <input type="text" class="form-control" id="father_occupation" name="father_occupation" placeholder="Father's occupation" style="width:350px;" required="">
+
+              </div>
+                  <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="mother_occupation">Mother's Ocpn </label>
+                <input type="text" class="form-control" id="mother_occupation" placeholder="Mother's occupation" name="mother_occupation" style="width:350px;" required="">
+              </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" placeholder="Dob" name="dob" style="..." required="">
+
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="aadhar">Aadhar Number</label>
+                <input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="Aadhar number" style="width:350px;" required="">
+
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="income">Family Income (per annum):</label>
+        <input type="number" class="form-control" id="income" name="income" placeholder="Family income" style="..." required="">
+
+              </div>
+            </div>
+               <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="Contact">Contact</label>
+                <input type="text" class="form-control" id="contact" pattern="[0-9]{10}" placeholder="Phone number" name="phone" style="width:350px;" required="">
+              </div>
+            </div>
+               <div class="form-row ">
+              <div class="form-group col-lg-4">
+                 <label for="nativity">Nativity</label>
+                    <select id="nativity" name="nativity">
+                        <option value="urban">Urban</option>
+                        <option value="rural">Rural</option>
+                    </select>
+              </div>
+            </div>
+               <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="ncl_class">NCL Class</label>
+                        <select id="ncl_class" name="ncl_class">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+              </div>
+            </div> <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="caste">Caste</label>
+                <input type="text" class="form-control" id="caste" placeholder="Caste" name="caste" style="width:350px;" required="">
+
+              </div>
+            </div>
+
+            <div class="btn-box">
+              <input type="submit" class="btn"  value="Signup" >
+            </div>
+          </form>
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{#    <script type="text/javascript">#}
+{#        function validatepwd() {#}
+{#            pwd=document.getElementById('pass').value;#}
+{#            cpwd=document.getElementById('copass').value;#}
+{#            if(pwd!=cpwd)#}
+{#            {#}
+{#                document.getElementById('copass').value;#}
+{#                alert('password Miss match!!!')#}
+{#            }#}
+{#        }#}
+{#    </script>#}
+{#    {% if kk == 'fa' %}#}
+{#        <script>#}
+{#        alert("User Already exist..")#}
+{#        </script>#}
+{#        {% elif kk == 'ss' %}#}
+{#        <script>#}
+{#        alert("Successfully Registered....")#}
+{#        </script>#}
+{#    {% endif %}#}
+{% endblock %}

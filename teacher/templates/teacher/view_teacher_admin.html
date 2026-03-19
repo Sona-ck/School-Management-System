@@ -1,0 +1,36 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-bordered" >
+    <tr style="color: black">
+        <th>Name</th>
+        <th>Qualification</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>address</th>
+    </tr>
+     {% for i in x %}
+    <tr style="color: black">
+
+        <td>{{ i.name }}</td>
+        <td>{{ i.qualification }}</td>
+        <td>{{ i.phone }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.address }}</td>
+
+
+
+    </tr>
+ {% endfor %}
+
+</table>
+
+</body>
+</html>
+{% endblock %}

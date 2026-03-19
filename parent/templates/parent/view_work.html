@@ -1,0 +1,22 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+
+<div class="container mt-4">
+<h2 class="text-center">Work / Homework</h2>
+<hr>
+
+{% for w in works %}
+<div class="card shadow mb-3">
+    <div class="card-body">
+        <h5>{{ w.title }}</h5>
+        <p>{{ w.description }}</p>
+        <small>{{ w.date }}</small>
+    </div>
+</div>
+{% empty %}
+<p>No work available</p>
+{% endfor %}
+
+</div>
+
+{% endblock %}

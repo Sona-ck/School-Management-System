@@ -1,0 +1,123 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+
+<style>
+    body {
+        font-family: Arial;
+        background-color: #f4f6f9;
+    }
+
+    .container {
+        width: 90%;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .approved {
+        color: green;
+        font-weight: bold;
+    }
+
+    .rejected {
+        color: red;
+        font-weight: bold;
+    }
+
+    .pending {
+        color: orange;
+        font-weight: bold;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .approve {
+        background-color: green;
+    }
+
+    .reject {
+        background-color: red;
+    }
+</style>
+
+<div class="container">
+    <h2>Manage Leave Requests</h2>
+
+```
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Date</th>
+        <th>Days</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for i in leaves %}
+    <tr>
+        <td>{{ i.student.name }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.no_of_leave }}</td>
+        <td>{{ i.reason }}</td>
+
+        <td>
+            {% if i.status == "Approved" %}
+                <span class="approved">Approved</span>
+            {% elif i.status == "Rejected" %}
+                <span class="rejected">Rejected</span>
+            {% else %}
+                <span class="pending">Pending</span>
+            {% endif %}
+        </td>
+
+        <td>
+            {% if i.status == "Pending" %}
+                <a href="/teacher/approve_leave/{{ i.id }}/" class="btn approve">Approve</a>
+                <a href="/teacher/reject_leave/{{ i.id }}/" class="btn reject">Reject</a>
+            {% else %}
+                ---
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No leave requests available</td>
+    </tr>
+    {% endfor %}
+</table>
+```
+
+</div>
+
+{% endblock %}

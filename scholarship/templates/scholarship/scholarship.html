@@ -1,0 +1,101 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+  <section class="book_section layout_padding">
+    <div class="container" style="width:350px;">
+      <div class="row">
+{#        <div class="col">#}
+          <form method="post">
+              {% csrf_token %}
+            <h4><span>Scholarship</span>
+            </h4>
+            <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Scholarship </label>
+                <input type="text" class="form-control" id="user" placeholder="Scholarship" name="schl"
+                        {% if sc %}
+                            value="{{ sc.scholarship }}"
+                        {% endif %}
+                       style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="publish_date">Publish Date</label>
+                <input type="date" class="form-control" id="publish_date"
+                       {% if sc %}
+                            value="{{ sc.publish_date|date:"Y-m-d" }}"
+                        {% endif %}
+                       placeholder="Publish Date" name="publish_date" style="width:350px;" required="">
+              </div>
+            </div>
+               <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="end_date">End Date </label>
+                <input type="date" class="form-control" id="end_date" placeholder="End Date" name="end_date"
+                        {% if sc %}
+                            value="{{ sc.end_date|date:"Y-m-d" }}"
+                        {% endif %}
+                       style="width:350px;" required="">
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="cat">Category </label>
+                <select id="cat" name="cat" class="form-control">
+                    {% if sc %}
+                        {% if sc.atype == 'General' %}
+                            <option selected>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                        {% elif sc.atype == 'OBC' %}
+                            <option>General</option>
+                            <option selected>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                        {% elif sc.atype == 'SC' %}
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option selected>SC</option>
+                            <option>ST</option>
+                         {% elif sc.atype == 'ST' %}
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option selected>ST</option>
+                         {% else %}
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                        {% endif %}
+                    {% else %}
+                        <option>General</option>
+                        <option>OBC</option>
+                        <option>SC</option>
+                        <option>ST</option>
+                    {% endif %}
+                </select>
+{#                <input type="text" class="form-control" id="user" placeholder="Details" name="dst" style="width:350px;" required="">#}
+              </div>
+            </div>
+              <div class="form-row">
+              <div class="form-group col-lg-4">
+                <label for="user">Details </label>
+                <input type="text" class="form-control" id="user" placeholder="Details" name="dst"
+                       {% if sc %}
+                            value="{{ sc.details }}"
+                        {% endif %}
+                       style="width:350px;" required="">
+              </div>
+            </div>
+            <div class="btn-box">
+              <input type="submit" class="btn">
+            </div>
+          </form>
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+{#    {% endif %}#}
+{% endblock %}

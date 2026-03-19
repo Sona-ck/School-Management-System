@@ -1,0 +1,35 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="btn btn-primary">
+    <tr style="color: black">
+        <th>Parent Name</th>
+        <th>Student Name</th>
+        <th>No of Days</th>
+        <th>Reason</th>
+        <th>Status</th>
+    </tr>
+    <tr style="color: black">
+        {% for i in x %}
+        <td>{{ i.parent_id }}</td>
+        <td>{{ i.student_id }}</td>
+        <td>{{ i.no_of_leave }}</td>
+            <td>{{ i.reason }}</td>
+            <td>{{ i.status }}</td>
+            <td><a href="/Leave/accept/" class="btn btn-primary">Accept</a> </td>
+            <td><a href="/Leave/reject/" class="btn btn-primary">Reject</a> </td>
+        {% endfor %}
+    </tr>
+
+
+</table>
+
+</body>
+</html>
+{% endblock %}
